@@ -5,7 +5,7 @@ class StartScreen extends React.Component {
         super(props);
         this.rollCallback = props.startscreen_roll_callback;
         this.state = {
-            number_of_dice: 1
+            number_of_dice: null
         };
     }
 
