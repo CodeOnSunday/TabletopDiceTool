@@ -1,0 +1,73 @@
+.diceValue {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.diceLabel {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.spacer {
+    height: 10px
+}
+
+.diceButton {
+    margin: 8px 8px !important;
+    width: 100px;
+}
+
+$dice_dist: 12px;
+$dice_border_margin: 5px;
+
+.diceLine {
+    width: 200px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    padding: $dice_dist 5px;
+    margin-bottom: -1px;
+}
+
+.diceCol1 {
+    margin-left: auto !important;
+}
+
+.diceCol2 {
+    margin-right:auto !important;
+    width: 0px;
+}
+
+.diceAnotation {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.diceTop {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.diceTopMid {
+    padding-top: calc(#{$dice_dist} - #{$dice_border_margin}) !important;
+    margin-top: calc(#{$dice_border_margin} * 2 - 1px) !important;
+}
+
+.diceBot {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.diceBotMid {
+    padding-bottom: calc(#{$dice_dist} - #{$dice_border_margin}) !important;
+    margin-bottom: calc(#{$dice_border_margin} * 2 - 1px) !important;
+}

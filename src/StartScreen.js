@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Button, TextField } from '@material-ui/core';
 
 class StartScreen extends React.Component {
     constructor(props) {
@@ -14,17 +15,41 @@ class StartScreen extends React.Component {
     }
 
     onNumberChange(event) {
-        this.state.number_of_dice = event.target.value;
-        this.setState(this.state);
+        this.setState({
+            number_of_dice: event.target.value
+        });
+    }
+
+    onKeyUp(e) {
+        if(e.key === "Enter") {
+            this.onRoll();
+        }
     }
 
     render() {
         return (
-            <div>
-                <div>Input dice count:</div>
-                <input type="number" value={this.state.number_of_dice} onChange={this.onNumberChange.bind(this)}></input>
-                <button onClick={this.onRoll.bind(this)}>Roll!</button>
-            </div>
+            <Box>
+                {/* <input type="number" value={this.state.number_of_dice} onChange={this.onNumberChange.bind(this)}></input> */}
+
+                <TextField 
+                    variant="outlined" 
+                    label="Dice" 
+                    type="number"
+                    value={ this.state.number_of_dice }
+                    onChange={ this.onNumberChange.bind(this) }
+                    onKeyUp={ this.onKeyUp.bind(this) }
+                    InputProps={{ 
+                        endAdornment: <Button 
+                            variant="text" 
+                            style={{
+                                marginLeft: 5
+                            }} 
+                            onClick={this.onRoll.bind(this)}
+                        >Roll!</Button>
+                    }}
+                ></TextField>
+                {/* <Button variant="contained" onClick={this.onRoll.bind(this)}>Roll!</Button> */}
+            </Box>
         );
     }
 }

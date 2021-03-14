@@ -15,6 +15,15 @@ class Dice {
             5: false,
             6: false
         };
+
+        this.selected = {
+            1: false,
+            2: false,
+            3: false,
+            4: false,
+            5: false,
+            6: false
+        };
     }
 
     addValue(value, count=1) {
@@ -34,6 +43,25 @@ class Dice {
             5: 0,
             6: 0
         });
+    }
+
+    toggleSelected(value) {
+        this.selected[value] = !this.selected[value];
+    }
+
+    isSelected(value) {
+        return this.selected[value];
+    }
+
+    resetSelected() {
+        this.selected = {
+            1: false,
+            2: false,
+            3: false,
+            4: false,
+            5: false,
+            6: false
+        };
     }
 
     getValueStr(value) {
